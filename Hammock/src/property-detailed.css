@@ -1,0 +1,142 @@
+
+#main-container{
+    font-family: "Roboto Light", serif;
+    width: 800px;
+    margin:auto;
+}
+
+
+
+.calender-container{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+#photo-container{
+    height: 400px;
+    margin:auto;
+
+}
+
+#photo-1{
+    width: 49.8%;
+    height: 80%;
+    padding-right: 0.2%;
+    float: left;
+    cursor: pointer;
+}
+
+#photo-2{
+    width: 50%;
+    height: 40%;
+    float: right;
+    cursor: pointer;
+}
+
+#photo-3{
+    width: 50%;
+    height: 39.8%;
+    padding-top: 0.2%;
+    float: right;
+    cursor: pointer;
+}
+
+#photo-prev-container{
+    float: bottom;
+    height:500px;
+}
+
+.photo-prev{
+    padding-top:2px;
+    padding-right: 2px;
+
+    width:10%;
+    float: left;
+    cursor: pointer;
+}
+
+.photo-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index:10;
+}
+
+.photo-modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.view-photos{
+    font-weight: bold;
+    float: right;
+}
+
+.description-container{
+    margin-top: -20px;
+
+}
+
+
+.top-description{
+    text-align:left;
+
+}
+
+.name{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+strong{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+small{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.description{
+    margin-top: -19px;
+
+}
+.description-detailed{
+    margin-top: -19px;
+    font-size: 15px;
+}
+
+
+.saveToList-button, .contact-button{
+    background-color: #008489;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+

@@ -1,0 +1,57 @@
+<!--
+The thank-you page will open up after an email is sent and will redirect the user to the home after a countdown.
+Displays a message thanking the user and informing them that their email has been sent.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you!</title>
+    <link rel = "stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Nav bar allows user to go back to the home page or create a new search-->
+    <div class="nav-container">
+        <nav id="nav-bar">
+            <button class="logo-button">hammock</button>
+            <div id="search-bar">
+                <form>
+                    <div class="location-input">
+                        <label>Location</label>
+                        <input type="text" placeholder="Where are you going?">
+                    </div>
+                    <div>
+                        <label>Check in</label>
+                        <input type="date" placeholder="Add date">
+                    </div>
+                    <div>
+                        <label>Check out</label>
+                        <input type="date" placeholder="Add date">
+                    </div>
+                    <div>
+                        <label>Guests</label>
+                        <input type="text" placeholder="Add guests">
+                    </div>
+                    <button type="submit"><img src="../images/search-icon.png"></button>
+                </form>
+            </div>
+            <ul class="nav-items">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <hr/>
+    </div>
+
+    <!-- Text thanking user and informing them that their email has been sent -->
+    <div id="thanks-group">
+        <h1>Thank you!</h1>
+        <h2>Your message has been sent out.</h2>
+
+        <!-- User will be redirected to home page after a 5 second countdown  -->
+        <h3 id="countdown">Redirecting to home page 5</h3>
+        <script src="thanks-page.js"></script>
+    </div>
+</body>
+</html>

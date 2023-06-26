@@ -1,0 +1,300 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: darkslategray ;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-button{
+    background: transparent;
+    border: none;
+    color: #008489;
+    font-weight: 900;
+    font-size: 36px;
+    display: inline-block;
+    cursor: pointer;
+}
+.nav-bar{
+    background: #ffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.nav-items li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+.nav-items li a{
+    text-decoration: none;
+    color: #008489;
+}
+.loginbox {
+    border-color: darkgreen;
+    width: 320px;
+    height: 420px;
+    background: #fff;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 50px 50px;
+    border-radius: 25px;
+}
+
+    h1{
+        margin:0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 44px;
+    }
+
+.loginbox p{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.loginbox input[name="loginEmail"],input[name="loginPassword"]
+{
+    border-color:#008489;
+    border-width: 2px ;
+    border-style: solid;
+    background: lightsteelblue;
+    outline:none;
+    height:40px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.loginbox input[name="continueButton"]
+{
+    border:none;
+    outline: none;
+    height:40px;
+    width: 232px;
+    background: #008489;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px ;
+    position: center;
+}
+
+.loginbox input[name="continueButton"]:hover{
+    cursor:pointer;
+    background: #fb2525;
+    color: #000;
+
+}
+
+.loginbox p{
+    font-size: 14px;
+    transform: translate(21%,80%);
+}
+.signUpModule button[name="loginSignUpButton"]{
+    outline: #008489;
+    border-width: 2px ;
+    border-style: solid;
+    border-color: #008489;
+    height:35px;
+    width: 110px;
+    background: #fff;
+    color: #008489;
+    font-size: 18px;
+    border-radius: 20px ;
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    transform: translate(-45%, 400%);
+}
+.signUpModule button[name="loginSignUpButton"]:hover{
+    cursor:pointer;
+    background: #fb2525;
+    border-color:#fb2525;
+    color: #000;
+
+}
+
+.modal{
+    position:absolute;
+    top: 30%;
+    left: 30%;
+    width: 520px;
+    height: 600px;
+    transform: translate(50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    max-width: 125%;
+}
+.modal.active{
+    position:absolute;
+    width: 620px;
+    height: 700px;
+    box-sizing: border-box;
+    transform: translate(10%,-20%)scale(1);
+
+}
+.modal-header{
+    padding:15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modal-header .title{
+    font-size: 3rem;
+    font-weight: bold;
+    transform: translate(130%,00%);
+
+
+}
+.modal-header .close-button{
+    cursor:pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 3rem;
+    font-weight:bold;
+    transform: translate(40%,-50%);
+}
+.model-body{
+    padding: 100px 100px;
+}
+
+.modal input[name="signName"],input[name="signEmail"],input[name="signPassword"],input[name="signPassword2"]{
+    border-width: 2px ;
+    border-style: solid;
+    border-color: #008489;
+    background: lightsteelblue;
+    margin: 10px 10px;
+    outline:none;
+    height:60px;
+    width:400px;
+    color: #fff;
+    font-size: 20px;
+    transform: translate(25%,50%);
+}
+::placeholder{
+    color: #9a9a9a;
+    font-weight: 400;
+}
+span{
+    font-size: 40px;
+    position:absolute;
+    right:35px;
+    transform: translate(-200%,-75%);
+    top:50%;
+    cursor:pointer;
+}
+.fa{
+    font-size: 80px;
+    color: #7a797e;
+}
+Span [id="togglePassword2"]{
+    position: absolute;
+    right:35px;
+    top:50%;
+    transform: translate(-110%,107%);
+    cursor:pointer;
+}
+.modal-body .indicator{
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.modal-body .indicator span{
+    position: absolute;
+    width: 133px;
+    height: 5px;
+    top: 69%;
+    left: -15px;
+    background: lightgray;
+    border-radius: 5px;
+
+}
+.indicator span.weak{
+    transform: translate(100%,0%);
+}
+.indicator span.medium{
+    transform: translate(200%,0%);
+}
+.indicator span.strong{
+    transform: translate(300%,0%);
+}
+.indicator span.active:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.indicator span.weak:before{
+    background-color: #ff4757;
+}
+.indicator span.medium:before{
+    background-color: orange;
+}
+.indicator span.strong:before{
+    background-color: #23ad5c;
+}
+
+.modal-body [name="passwordStrength"]{
+    font-size: 20px;
+    display: none;
+    position:absolute;
+    top:75%;
+    left:50px;
+    transform: translate(90%,0);
+}
+.model-body .text.weak{
+    color: #ff4757;
+}
+form .text.medium{
+    color: orange;
+}
+form .text.strong{
+    color: #23ad5c;
+}
+
+
+.modal button[name="signButton"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 285px;
+    background: #008489;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    transform: translate(60%, 330%);
+}
+#overlay{
+    position:fixed;
+    opacity:0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity:1;
+    pointer-events: all;
+}

@@ -1,0 +1,49 @@
+<!--
+The landing/home-page that a user is met with upon opening Hammock. Gives the user the option between searching
+for a stay (renter/buyer) or posting a property (owner/proprietor)
+ -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Secular One' rel='stylesheet'>
+</head>
+<body>
+
+<div class="nav-container">
+    <nav id="nav-bar">
+        <button class="logo-button">hammock</button>
+        <ul class="nav-items">
+            <li><a href="loginPage.html">Sign in</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+    <hr/>
+</div>
+
+
+<div class="centered-container">
+    <div>
+        <h1>Welcome to Hammock!</h1>
+        <p>The better way to stay</p>
+    </div>
+
+</div>
+
+<div class="middle-container">
+    <header>
+        <h2> I'd like to </h2>
+        <div class="btn-group">
+            <button onclick="window.location= 'search-page.html'">Search for a Stay</button>
+            <button onclick="window.location= 'posting-page.html'">Post a Property</button>
+        </div>
+    </header>
+</div>
+
+<script defer src="booking-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!--
+ The property detailed page gives us a detailed view of the property. It includes pictures, a detailed description, price, and accommodations of the property.
+ It includes a "book trip" button that will take the user to the booking page
+ -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Layout</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rental Page</title>
+    <link rel="stylesheet" href="header-style.css">
+    <link rel="stylesheet" href="property-detailed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script defer src="property-detailed.js"></script>
+</head>
+<body>
+
+<!--Nav bar allows user to go back to the home page or create a new search-->
+<div class="nav-container">
+    <nav id="nav-bar">
+        <button class="logo-button">hammock</button>
+        <div class="search-bar">
+            <form>
+                <div class="location-input">
+                    <label>Location</label>
+                    <input type="text" placeholder="Where are you going?">
+                </div>
+                <div>
+                    <label>Check in</label>
+                    <input type="text" placeholder="Add date">
+                </div>
+                <div>
+                    <label>Check out</label>
+                    <input type="text" placeholder="Add date">
+                </div>
+                <div>
+                    <label>Guests</label>
+                    <input type="text" placeholder="Add guests">
+                </div>
+                <button type="submit"><img src="images/search-icon.png"></button>
+            </form>
+        </div>
+        <ul class="nav-items">
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <div id="main-container">
+        <!-- Displays photos in a layout -->
+        <div id="photo-container" class="photos">
+
+            <!-- Main photos -->
+            <img id="photo-1" class="photos" src="images/photos/Main1.JPG" alt="Main photo of location">
+
+            <img id="photo-2" class="photos" src="images/photos/Main2.JPG" alt="">
+
+            <img id="photo-3" class="photos" src="images/photos/Main3.JPG" alt="">
+
+            <!-- a collection of additional photos if photo count exceeds 3. Layed out sequentially as previews  -->
+            <section id="photo-prev-container" class="photo-prev-container">
+
+                <img id="photo-prev-1" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-2" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-3" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-4" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-5" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-6" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-7" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+                <img id="photo-prev-8" class="photo-prev" src="images/photos/Main1.JPG" alt="">
+
+                <!-- Link that would take user to a page or model. All the photos would be listed here. Not implemented-->
+                <p class="view-photos"><a href="">View all photos</a> </p>
+
+            </section>
+
+            <!-- When a photo is clicked on. It will be enlarged within a modal view -->
+            <div class="photo-modal" id="photo-modal">
+                <img id="photo-large" src="images/photos/Main1.JPG" alt="">
+            </div>
+            <div id="overlay"></div>
+        </div>
+
+        <!-- Displays information of property -->
+        <div class="description-container">
+            <div class="top-description">
+                <h1 id="name" class="top-description">Hostel Villa <strong>$266</strong><small>/night</small></h1>
+            </div>
+            <h2 class="description">1 guest - Shared bedroom - 1 bed - 1 shared bath</h2>
+            <div class="detailed-description-container">
+                <p class="description-detailed">
+                    The house is located in a typical Tuscan rural village, offering ample space for sharing inside and out, giving guests the opportunity to fully experience their stay. The atmosphere of the room, in addition to being characterized by its hanging structures built entirely of wood, lives synchronically with the other spaces offered to guests: from the kitchen, living rooms and outdoor garden.
+                </p>
+            </div>
+        </div>
+
+        <!-- Collection buttons -->
+        <div class="btn-group">
+            <!-- button to save to list. Feature has not been implemented, but users would be able to save property they liked into a list -->
+            <button class="saveToList-button">Save To List</button>
+
+            <!-- Button to book trip. Takes user to booking page were they will conclude their booking journey -->
+            <button class="contact-button" onclick="window.location= 'bookingpage.html'">Book Trip</button>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>
+

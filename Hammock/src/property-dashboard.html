@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div class="nav-container">
+  <nav id="nav-bar">
+    <button class="logo-button">hammock</button>
+    <ul class="nav-items">
+      <li><a href="property-dashboard.html">Account</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+  <hr/>
+</div>
+<div class="prop-dash-header" align="center"><h2>Your Dashboard</h2></div>
+<button class="btn-post-new" type="submit" onclick="window.location= 'posting-page.html'">+ Post new listing</button>
+<div id="post-dash-body">
+    <ul id="property-cards">
+    </ul>
+    <div class="account-info">
+        <div class="account-box">
+            <h3 align="center">Edit Account Info</h3>
+            <form>
+                <div class="account-field">
+                    <label>Full Name</label>
+                    <input name="edit-name" type="text" placeholder="Enter Full Name">
+                </div>
+                <div class="account-field">
+                    <label>New Email address</label>
+                    <input name="edit-email" type="email" placeholder="Enter Email Address">
+                </div>
+                <div class="account-field">
+                    <label>New Password</label>
+                    <input name="edit-password" type="text" placeholder="Enter New Password">
+                </div>
+                <div class="account-field">
+                    <label>Reenter new password</label>
+                    <input name="edit-password" type="text" placeholder="Please reenter New Password">
+                </div>
+                <div class="account-box-btns">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<div class="modal-edit" id="modal-edit">
+    <div class="modal-edit-header">
+        <div class="modal-edit-title" style="font-size: 28px">
+            <p>Edit your Listing</p>
+        </div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-edit-body">
+        <form>
+            <button type="button" class="collapsible">Property Basics</button>
+            <div class="content">
+                <div>
+                    <label>Property Name</label><br>
+                    <input name="prop-ad" type="text" placeholder="Give your property a nice title">
+                </div>
+                <div>
+                    <label>Property Type</label><br>
+                    <div class="custom-select" style="width: 100%"><select name = "property-selector">
+                        <option selected disabled hidden value="">--Select--</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="House">House</option>
+                        <option value="Condo">Condo</option>
+                        <option value="Hostel">Hostel</option>
+                    </select></div>
+                </div>
+                <div>
+                    <label>Property Location</label><br>
+                    <input name="prop-ad" type="text" placeholder="Enter state">
+                </div>
+            </div>
+            <button type="button" class="collapsible">Guests/Bed/Bath</button>
+            <div class="content">
+                <div class="guest-counters" align="center">
+                    <div class="guest-counter">
+                        <div style="width: 50%; float: left">Number of Guests:</div>
+                        <div style="width: 50%; float: right">
+                            <button type="button" class="btn-count" onclick="guestClick(-1)">-</button>
+                            <span id="cnt-guest">0</span>
+                            <button type="button" class="btn-count" onclick="guestClick(1)">+</button>
+                        </div>
+                    </div><br><br>
+                    <div class="guest-counter">
+                        <div style="width: 50%; float: left">Number of Beds:</div>
+                        <div style="width: 50%; float: right">
+                            <button type="button" class="btn-count" onclick="bedClick(-1)">-</button>
+                            <span id="cnt-bed">0</span>
+                            <button type="button" class="btn-count" onclick="bedClick(1)">+</button>
+                        </div>
+                    </div><br><br>
+                    <div class="guest-counter">
+                        <div style="width: 50%; float: left;">Number of Baths:</div>
+                        <div style="width: 50%; float: right;">
+                            <button type="button" class="btn-count" onclick="bathClick(-0.5)">-</button>
+                            <span id="cnt-bath">0</span>
+                            <button type="button" class="btn-count" onclick="bathClick(0.5)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Amenities</button>
+            <div class="content">
+                <ul class="content-amenities" style="list-style: none">
+                    <li>
+                        <input type="checkbox" id="free-breakfast" value="free-breakfast" >
+                        <label for="free-breakfast">Free Breakfast</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="free-wifi" value="free-wifi">
+                        <label for="free-wifi">Free Wifi</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="free-parking" value="free-parking">
+                        <label for="free-parking">Free Parking</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="pet-friendly" value="pet-friendly">
+                        <label for="pet-friendly">Pet Friendly</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="soap" value="soap">
+                        <label for="soap">Soap and Shampoo</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="a/c" value="a/c">
+                        <label for="a/c">Air Conditioning</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="pool" value="pool">
+                        <label for="pool">Pool</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="laundry" value="laundry">
+                        <label for="laundry">Washer and Dryer</label>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Photos</button>
+            <div class="content">
+                <div>
+                    <h4>Main Photo</h4>
+                    <p>This is the primary photo that will be used for your listing, it is the first image people will see of your place.</p>
+                    <input type="file" name="input-file-main">
+                </div>
+                <div>
+                    <h4>Additional Photos</h4>
+                    <p>Add up to 4 additional photos that show off your place when users click on your listing.</p>
+                    <input type="file" name="input-file-side" multiple>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Description</button>
+            <div class="content">
+                <p>Describe your property to future guests. Mention any unique qualities, amenities, or features you think renters will enjoy.</p>
+                <textarea placeholder="Enter description here"></textarea>
+            </div>
+            <button type="button" class="collapsible">Price</button>
+            <div class="content">
+                <p>Set the per-nightly rate for your property (you can always change this later)</p>
+                <label for="price">Default Price</label>
+                <input type="text" name="price" placeholder="Dollar amount per day">
+                <label for = "currency">Currency</label><br>
+                <select name = "currency" style="font-size: 10px;">
+                    <option selected disabled hidden value="">--Select--</option>
+                    <option value="USD">USD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUS">AUS</option>
+                </select>
+            </div>
+            <div align="right"><button type="submit">Update</button></div>
+        </form>
+    </div>
+</div>
+<div class="modal-delete" id="modal-delete">
+    <div class="modal-delete-header">
+        <div class="modal-delete-title" style="font-size: 28px">
+            <p>Delete Listing</p>
+        </div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-delete-body">
+        <p align="center">Are you sure you want to delete this listing?</p>
+       <form align="center">
+           <button type="submit" class="delete-button">Delete Listing</button>
+       </form>
+    </div>
+</div>
+<div id="overlay"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src= "property-dash-script.js"></script>
+</body>
+</html>

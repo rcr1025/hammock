@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posting Page</title>
+    <link rel = "stylesheet" href="styles.css">
+</head>
+<body id="body-posting">
+<div class="nav-container">
+    <nav id="nav-bar">
+        <button class="logo-button">hammock</button>
+        <div id="search-bar" class="alt-search">
+            <form>
+                <div class="location-input">
+                    <label>Location</label>
+                    <input type="text" placeholder="Where are you going?">
+                </div>
+                <div>
+                    <label>Check in</label>
+                    <input type="date" placeholder="Add date">
+                </div>
+                <div>
+                    <label>Check out</label>
+                    <input type="date" placeholder="Add date">
+                </div>
+                <div>
+                    <label>Guests</label>
+                    <input type="text" placeholder="Add guests">
+                </div>
+                <button type="submit"><img src="images/search-icon.png"></button>
+            </form>
+
+        </div>
+        <ul class="nav-items">
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+    <hr/>
+</div>
+<div class="posting-dialogue">
+    <form id="Form1">
+        <h3> Post a property</h3>
+        <p>First, lets get some basic information about your property.</p>
+        <div>
+            <label>Property Name</label><br>
+            <input id="prop-title" type="text" placeholder="Give your property a nice title">
+        </div>
+        <div>
+            <label>Property Type</label><br>
+            <div class="custom-select" style="width: 100%"><select id="prop-type">
+                <option selected disabled hidden value="">--Select--</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Apartment">Apartment</option>
+                <option value="House">House</option>
+                <option value="Condo">Condo</option>
+                <option value="Hostel">Hostel</option>
+            </select></div>
+        </div>
+        <div>
+            <label>Property Location</label><br>
+            <input id="prop-location" type="text" placeholder="Enter state">
+        </div>
+        <div class="posting-btn-box">
+            <button type="button" id="Next1">Next</button>
+        </div>
+    </form>
+    <form id="Form2">
+        <h3> About Your Property </h3>
+        <p>Enter some more specific information about your property so you can find the right guests for your space.</p>
+        <div class="guest-counters" align="center">
+            <div class="guest-counter">
+                <div style="width: 50%; float: left">Number of Guests:</div>
+                <div style="width: 50%; float: right">
+                    <button type="button" class="btn-count" onclick="guestClick(-1)">-</button>
+                    <span id="cnt-guest">0</span>
+                    <button type="button" class="btn-count" onclick="guestClick(1)">+</button>
+                </div>
+            </div><br><br>
+            <div class="guest-counter">
+                <div style="width: 50%; float: left">Number of Beds:</div>
+                <div style="width: 50%; float: right">
+                    <button type="button" class="btn-count" onclick="bedClick(-1)">-</button>
+                    <span id="cnt-bed">0</span>
+                    <button type="button" class="btn-count" onclick="bedClick(1)">+</button>
+                </div>
+            </div><br><br>
+            <div class="guest-counter">
+                <div style="width: 50%; float: left;">Number of Baths:</div>
+                <div style="width: 50%; float: right;">
+                    <button type="button" class="btn-count" onclick="bathClick(-0.5)">-</button>
+                    <span id="cnt-bath">0</span>
+                    <button type="button" class="btn-count" onclick="bathClick(0.5)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="posting-btn-box">
+            <div>
+                <button type="button" id="Back1" class="btn-back">Back</button>
+                <button type="button" id="Next2">Next</button>
+            </div>
+        </div>
+    </form>
+    <form id="Form3">
+        <h3> Available Amenities </h3>
+        <p>Which amenities do you offer your guests?</p>
+            <ul id="prop-amenities" style="list-style: none ">
+                <li>
+                    <input type="checkbox" name="amenities[]" id="free-breakfast" value="Free Breakfast">
+                    <label for="free-breakfast">Free Breakfast</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="free-wifi" value="Free Wifi">
+                    <label for="free-wifi">Free Wifi</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="free-parking" value="Free Parking">
+                    <label for="free-parking">Free Parking</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="pet-friendly" value="Pet Friendly">
+                    <label for="pet-friendly">Pet Friendly</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="soap" value="Soap">
+                    <label for="soap">Soap and Shampoo</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="a/c" value="A/C">
+                    <label for="a/c">Air Conditioning</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="pool" value="Pool">
+                    <label for="pool">Pool</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="amenities[]" id="laundry" value="Laundry">
+                    <label for="laundry">Washer and Dryer</label>
+                </li>
+
+            </ul>
+        <div class="posting-btn-box">
+            <div>
+                <button type="button" id="Back2" class="btn-back">Back</button>
+                <button type="button" id="Next3">Next</button>
+            </div>
+        </div>
+    </form>
+    <form id="Form4">
+        <h3> Upload Photos </h3>
+        <div>
+            <h4>Main Photo</h4>
+            <p>This is the primary photo that will be used for your listing, it is the first image people will see of your place.</p>
+            <input type="file" name="input-file-main" >
+        </div>
+        <div>
+            <h4>Additional Photos</h4>
+            <p>Add up to 4 additional photos that show off your place when users click on your listing.</p>
+        <input type="file" name="input-file-side" multiple >
+        </div>
+
+        <div class="posting-btn-box">
+            <div>
+                <button type="button" id="Back3" class="btn-back">Back</button>
+                <button type="button" id="Next4">Next</button>
+            </div>
+        </div>
+    </form>
+    <form id="Form5">
+        <h3> Add a description </h3>
+        <p>Describe your property to future guests. Mention any unique qualities, amenities, or features you think renters will enjoy.</p>
+        <textarea id="prop-description" placeholder="Enter description here"></textarea>
+
+        <div class="posting-btn-box">
+            <div>
+                <button type="button" id="Back4" class="btn-back">Back</button>
+                <button type="button" id="Next5">Next</button>
+            </div>
+        </div>
+    </form>
+    <form id="Form6">
+        <h3> Final Details </h3>
+        <p style="opacity: 50%;">Set the per-nightly rate for your property (you can always change this later)</p>
+        <label>Default Price</label>
+        <input type="text" id="prop-price" placeholder="Dollar amount per day" >
+        <label>Your Email</label><br>
+        <input id="prop-email" type="text" placeholder="Enter your email">
+
+        <div class="posting-btn-box">
+            <div>
+                <button type="button" id="Back5" class="btn-back">Back</button>
+                <button type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>Step 1</small></div>
+        <div class="step-col"><small>Step 2</small></div>
+        <div class="step-col"><small>Step 3</small></div>
+        <div class="step-col"><small>Step 4</small></div>
+        <div class="step-col"><small>Step 5</small></div>
+        <div class="step-col"><small>Step 6</small></div>
+    </div>
+</div>
+<script src= "posting-script.js"></script>
+</body>
+</html>

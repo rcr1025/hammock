@@ -1,0 +1,721 @@
+body{
+    font-family: "Helvetica Neue";
+}
+/* Navigation Bar */
+#nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-container{
+    display: flex;
+    margin-left: 50px;
+}
+.header-container button{
+    background: transparent;
+    border: transparent;
+    font-size: 26px;
+    margin-right: 30px;
+}
+.details-container header{
+    padding: 30px 60px 135px 30px;
+}
+.logo-button{
+    border: none;
+    font-family: 'Roboto-black', sans-serif;
+    color: #008489;
+    font-weight: 900;
+    font-size: 36px;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+}
+.nav-bar{
+    background: transparent;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.nav-items li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+.nav-items li a{
+    text-decoration: none;
+    color: #008489;
+}
+#search-bar{
+    background: transparent;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50%;
+}
+#search-bar form{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+#search-bar form input{
+    display: block;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+#search-bar form button{
+    background: #008489;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+#search-bar form button image{
+    width: 7px;
+    height: auto;
+    margin-top: 3px;
+}
+.location-input{
+    flex: 1;
+}
+#search-bar form label{
+    font-weight: 600;
+}
+/* Booking Page */
+.middle{
+    display: flex;
+    margin-left: 50px;
+    overflow: hidden;
+}
+.details-container{
+    width: 50%;
+    float: left;
+    border: 1px;
+}
+#boxed{
+    padding: 10px;
+    border-radius: 4%;
+    margin-left: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    border: 1px solid black;
+    overflow: hidden;
+}
+.box-top{
+    display: flex;
+    padding: 5px;
+}
+.box-body{
+    display: flex;
+    justify-content: space-between;
+}
+.top-text{
+    padding: 5px;
+    text-align: top;
+}
+.footer-container{
+    margin-left: 50px;
+}
+.footer-container button{
+    cursor: pointer;
+    color: #FFFF;
+    font-size: 18px;
+    background: #FF4141;
+    width: 203px;
+    height: 47px;
+}
+
+/** Modal **/
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-header{
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+#modal-body{
+    padding: 10px 15px;
+}
+#modal-body input{
+    width: 95%;
+    border: none;
+}
+#modal-body textarea{
+    height: 200px;
+    width: 95%;
+    resize: none;
+    border: none;
+}
+#modal-body label{
+    opacity: 50%;
+}
+.modal-form{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #008489;
+}
+#modal-body button{
+    margin-right: 10px;
+    float: right;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #008489;
+    border-radius: 10px;
+    font-weight: bold;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 200ms ease-in-out;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Posting Page */
+#body-posting{
+    background-color: #003A3D;
+}
+.alt-search label{
+    color: white;
+}
+.posting-dialogue{
+    width: 360px;
+    height: 400px;
+    font-size: 14px;
+    margin: 8% auto;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.posting-dialogue h3{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.posting-dialogue p{
+    opacity: 50%;
+}
+.posting-dialogue form{
+    width: 280px;
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    transition: 0.5s;
+}
+.posting-dialogue form input[type=text]{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 132, 137,0.7);
+    border-radius: 5px;
+    background-color: rgba(1, 211, 219,0.15);
+}
+
+.posting-dialogue form select{
+    cursor: pointer;
+    font-size: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;
+    background-color: rgba(1, 211, 219,0.15);
+    outline: none;
+}
+::placeholder{
+    color: #777;
+}
+.posting-btn-box{
+    position: absolute;
+    top: 280px;
+    text-align: center;
+    width: 100%;
+    margin: 30px auto;
+}
+.posting-dialogue form button{
+    width: 85px;
+    height: 35px;
+    margin: 0 10px;
+    background: white;
+    border: 1px solid #008489;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.posting-dialogue .btn-back{
+    background-color: #008489;
+    color: white;
+}
+#Form2,#Form3,#Form4,#Form5,#Form6{
+    left: 450px;
+}
+.step-row{
+    width: 360px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+}
+.step-col{
+    width: 120px;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+#progress{
+   position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: #008489;
+    transition: 1s;
+}
+#progress::after{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -19.5px;
+    top: 0;
+    border-left: 20px solid #008489;
+}
+.guest-counter .btn-count{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+#Form3 li{
+    display: flex;
+}
+#Form4 h4{
+    margin-bottom: 0;
+}
+#Form4 p{
+    margin-top: 0;
+    opacity: 50%;
+    font-size: 12px;
+}
+#Form5 textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    border-color: #008489;
+}
+.prop-dash-header{
+    position: relative;
+    margin-bottom: 40px;
+}
+#post-dash-body{
+    display: flex;
+}
+#property-cards{
+    width: 800px;
+    list-style: none;
+}
+#property-card{
+    margin-bottom: 20px;
+}
+.account-info{
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    overflow: hidden;
+    width: 500px;
+}
+.account-info form input[type=text],input[type=email]{
+    font-size: 12px;
+    width: 90%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 132, 137,0.7);
+    border-radius: 5px;
+    background-color: white;
+}
+.account-box{
+    margin: auto;
+    margin-top: 100px;
+    width: 325px;
+    background: rgb(0, 132, 137);
+    border: 1px solid #008489;
+    border-radius: 10px;
+}
+.account-box button{
+    width: 85px;
+    height: 35px;
+    margin: 0 10px;
+    background: white;
+    border: 1px solid #008489;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.account-box-btns{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.account-field{
+    width: 80%;
+    margin-left: 10%;
+}
+.account-field label,input{
+    display: block;
+    margin-bottom: 10px;
+}
+#property-card{
+    margin-left: 3%;
+    height: 150px;
+    width: 600px;
+}
+#property-card a{
+    color: black;
+    text-decoration: none;
+}
+.btn-post-new{
+    justify-content: center;
+    text-decoration: none;
+    margin: 20px;
+    width: 125px;
+    height: 40px;
+    background-color: #008489;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.card-body{
+    display: flex;
+    width: 100%;
+}
+.card-text{
+    width: 100%;
+}
+#property-card hr{
+    width: 500px;
+    margin-left: 0;
+    border-color: #008489;
+    opacity: 25%;
+}
+#property-card img{
+    border-radius: 15px;
+    margin-right: 10px;
+    width: 150px;
+}
+.card-description{
+    resize: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    opacity: 50%;
+}
+.card-amenities{
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+}
+
+.property-dropdown {
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.prop-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.prop-dropdown-content a {
+    font-size: 10px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.prop-dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* Edit Listing Modal */
+
+.modal-edit{
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.modal-edit.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-edit-header{
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-edit-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-edit-header .close-button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-edit-body{
+    padding: 10px 15px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+.modal-edit-body input[type=text]{
+    font-size: 12px;
+    width: 90%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 132, 137,0.7);
+    border-radius: 5px;
+    background-color: white;
+}
+.modal-edit-body form select{
+    cursor: pointer;
+    font-size: 10px;
+    width: 93%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;
+    background-color: rgba(1, 211, 219,0.15);
+    outline: none;
+}
+.modal-edit-body li{
+    display: flex;
+}
+.modal-edit-body textarea{
+    height: 200px;
+    width: 95%;
+    resize: none;
+    border: 1px solid rgba(0, 132, 137,0.7);
+    border-radius: 10px;
+}
+.modal-edit-body button{
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #008489;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.modal-edit-body .guest-counters{
+    height: 100px;
+}
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
+.modal-delete{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.modal-delete.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-delete-header{
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-delete-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-delete-header .close-button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.modal-delete-body{
+    padding: 10px 15px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+.delete-button{
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Callum's Styles*/
+
+.centered-container {
+    display: flex;
+    margin: 90px auto 70px;
+    width: 35em;
+}
+
+.centered-container h1 {
+    font-family: 'Roboto-black', sans-serif;
+    font-size: 3.0em;
+}
+
+.centered-container p {
+    font-family: 'Secular One',serif;
+    margin-left: 150px;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #007E83;
+    line-height: 0;
+    margin-top: -10px;
+}
+
+.middle-container {
+    display: flex;
+    font-family: Verdana;
+    width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3px;
+
+}
+
+.middle-container h2 {
+    font-family: 'roboto-bold', sans-serif;
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: -7px;
+    height: 48px;
+}
+.btn-group {
+    margin-left: auto;
+    transform: translate(-4%);
+
+
+}
+.btn-group button {
+    width: 210px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 510;
+    background-color: transparent;
+    border-radius: 22px;
+    border: 1.5px solid #008489;
+    padding: 10px 32px;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    -webkit-appearance: none;
+}
+.btn-group button:hover {
+    background-color: #008489;
+    color: white;
+}
+
+/* Thank you page */
+#thanks-group {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    padding-top: 100px;
+    color: #008489;
+}
+
+#thanks-group h1{
+    font-size: 40px;
+
+}
+
+#thanks-group h3{
+    padding-top: 20px;
+    color: grey;
+}
+
+#thanks-group h2
